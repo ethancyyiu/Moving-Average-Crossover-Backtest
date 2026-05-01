@@ -3,7 +3,7 @@ import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-data = yf.download("SPY", start="2020-01-01", end="2025-01-01")
+data = yf.download("SPY", start="2000-01-01", end="2025-01-01")
 
 if isinstance(data.columns, pd.MultiIndex):
     data.columns = data.columns.get_level_values(0)
