@@ -24,4 +24,7 @@ data["position"] = data["signal"].shift(1).fillna(0)
 data["return"] = data["price"].pct_change()
 data["strategy_return"] = data["return"] * data["position"]
 
+data["buy_hold"] = (1 + data["return"]).cumprod()
+data["strategy"] = (1 + data["strategy_return"]).cumprod()
+
 
