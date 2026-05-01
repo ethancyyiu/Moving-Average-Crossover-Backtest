@@ -27,4 +27,6 @@ data["strategy_return"] = data["return"] * data["position"]
 data["buy_hold"] = (1 + data["return"]).cumprod()
 data["strategy"] = (1 + data["strategy_return"]).cumprod()
 
+plt.figure(figsize=(12, 6))
+
 
