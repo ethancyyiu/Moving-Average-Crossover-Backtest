@@ -37,4 +37,6 @@ plt.ylabel("Growth of $1")
 plt.grid(True)
 plt.show()
 
+daily = data["strategy_return"].dropna()
+sharpe = np.sqrt(252) * daily.mean() / daily.std()
 
