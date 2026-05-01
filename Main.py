@@ -19,5 +19,6 @@ print(data[["price", "SMA20", "SMA50"]].head(60))
 
 data["signal"] = 0
 data.loc[data["SMA20"] > data["SMA50"], "signal"] = 1
+data["position"] = data["signal"].shift(1).fillna(0)
 
 
