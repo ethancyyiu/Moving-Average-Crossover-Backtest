@@ -28,5 +28,13 @@ data["buy_hold"] = (1 + data["return"]).cumprod()
 data["strategy"] = (1 + data["strategy_return"]).cumprod()
 
 plt.figure(figsize=(12, 6))
+plt.plot(data.index, data["buy_hold"], label="Buy & Hold")
+plt.plot(data.index, data["strategy"], label="SMA20/50 Strategy")
+plt.legend()
+plt.title("Cumulative Returns: Buy & Hold vs SMA Crossover")
+plt.xlabel("Date")
+plt.ylabel("Growth of $1")
+plt.grid(True)
+plt.show()
 
 
