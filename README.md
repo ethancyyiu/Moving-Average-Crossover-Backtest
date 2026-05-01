@@ -79,7 +79,7 @@ Max drawdown (how bad the worst drop was)
 And it plots both performance lines so you can see which one did better.
 
 Why I Did This
-I’m a first-year student trying to learn quant/data stuff, and this felt like a good starter project. It’s simple enough that I didn’t get overwhelmed, but still “real” enough to put on a resume or talk about in interviews.
+I’m a first-year student trying to learn quant/data stuff, and this felt like a good and interesting project. I didn’t get overwhelmed, but still felt so real, like working a job.
 
 I learned how to:
 
@@ -107,5 +107,3 @@ Test other assets
 Make it object-oriented
 
 Add optimization
-
-But for now, this is good enough for a first-year project.
