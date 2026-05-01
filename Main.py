@@ -3,7 +3,7 @@ import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-data = yf.download("SPY", start="2015-01-01", end="2025-01-01")
+data = yf.download("SPY", start="2020-01-01", end="2025-01-01")
 
 if isinstance(data.columns, pd.MultiIndex):
     data.columns = data.columns.get_level_values(0)
@@ -34,7 +34,7 @@ daily = data["strategy_return"].dropna()
 sharpe = np.sqrt(252) * daily.mean() / daily.std()
 print("Strategy Sharpe ratio:", sharpe)
 
-equity = data["strategy_cum"]
+equity = data["strategy"]
 running_max = equity.cummax()
 drawdown = equity / running_max - 1
 max_drawdown = drawdown.min()
