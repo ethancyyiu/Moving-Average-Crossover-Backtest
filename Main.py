@@ -21,4 +21,7 @@ data["signal"] = 0
 data.loc[data["SMA20"] > data["SMA50"], "signal"] = 1
 data["position"] = data["signal"].shift(1).fillna(0)
 
+data["return"] = data["price"].pct_change()
+data["strategy_return"] = data["return"] * data["position"]
+
 
