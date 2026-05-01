@@ -12,5 +12,8 @@ print(data.columns)
 
 data["price"] = data["Close"]
 
+data["SMA20"] = data["price"].rolling(window=20).mean()
+data["SMA50"] = data["price"].rolling(window=50).mean()
+
 
 
