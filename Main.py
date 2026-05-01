@@ -27,6 +27,9 @@ data["strategy_return"] = data["return"] * data["position"]
 data["buy_hold"] = (1 + data["return"]).cumprod()
 data["strategy"] = (1 + data["strategy_return"]).cumprod()
 
+print("Final buy & hold return:", data["buy_hold"].iloc[-1] - 1)
+print("Final strategy return:", data["strategy"].iloc[-1] - 1)
+
 plt.figure(figsize=(12, 6))
 plt.plot(data.index, data["buy_hold"], label="Buy & Hold")
 plt.plot(data.index, data["strategy"], label="SMA20/50 Strategy")
@@ -39,4 +42,4 @@ plt.show()
 
 daily = data["strategy_return"].dropna()
 sharpe = np.sqrt(252) * daily.mean() / daily.std()
-
+print("Strategy Sharpe ratio:", sharpe)
