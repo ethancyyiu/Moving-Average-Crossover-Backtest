@@ -43,3 +43,9 @@ plt.show()
 daily = data["strategy_return"].dropna()
 sharpe = np.sqrt(252) * daily.mean() / daily.std()
 print("Strategy Sharpe ratio:", sharpe)
+
+equity = data["strategy_cum"]
+running_max = equity.cummax()
+drawdown = equity / running_max - 1
+max_drawdown = drawdown.min()
+print("Strategy max drawdown:", max_drawdown)
